@@ -1,68 +1,62 @@
-# Hide-Icon
+Hide-Icon
 
-一个简洁的 macOS 桌面图标隐藏工具，让你的桌面瞬间变得干净整洁。
+A minimalist macOS desktop icon hiding tool that instantly gives your desktop a clean and organized look.
 
 ![Version](https://img.shields.io/badge/version-1.0-blue.svg)
 ![Platform](https://img.shields.io/badge/platform-macOS%2015.4+-lightgrey.svg)
 ![Swift](https://img.shields.io/badge/swift-5.0-orange.svg)
 
-## 📖 项目简介
+📖 Project Overview
 
-Hide-Icon 是一个轻量级的 macOS 应用程序，专为需要保持桌面整洁的用户设计。通过简单的点击操作，你可以瞬间隐藏或显示桌面上的所有图标，让你在演示、截图或专注工作时拥有一个完全干净的桌面环境。
+Hide-Icon is a lightweight macOS application designed for users who prefer a tidy desktop. With just a simple click, you can instantly hide or show all desktop icons, giving you a clutter-free environment during presentations, screenshots, or focused work sessions.
 
-## ✨ 功能特性
+✨ Features
+	•	🎯 One-Click Toggle: Quickly hide/show desktop icons via the menu bar icon
+	•	🔄 Real-Time Switching: Changes take effect immediately—no system restart required
+	•	🎨 Intuitive UI: Menu bar icon changes according to current status
+	•	👁️ Eye icon: Desktop icons are visible
+	•	👁️‍🗨️ Eye with slash: Desktop icons are hidden
+	•	🚀 Lightweight: Runs in the background without occupying the Dock
+	•	🛡️ Safe Exit: Automatically restores desktop icons when quitting the app
+	•	🎛️ Context Menu: Full control options via right-click menu
 
-- 🎯 **一键切换**：通过状态栏图标快速隐藏/显示桌面图标
-- 🔄 **实时切换**：无需重启系统，立即生效
-- 🎨 **直观界面**：状态栏图标会根据当前状态变化
-  - 👁️ 眼睛图标：桌面图标可见
-  - 👁️‍🗨️ 斜杠眼睛图标：桌面图标隐藏
-- 🚀 **轻量级**：纯后台运行，不占用 Dock 空间
-- 🛡️ **安全退出**：应用退出时自动恢复桌面图标显示
-- 🎛️ **右键菜单**：提供完整的控制选项
+🚀 Getting Started
 
-## 🚀 快速开始
+System Requirements
+	•	macOS 15.4 or later
+	•	Apple Silicon or Intel Mac
 
-### 系统要求
+How to Use
 
-- macOS 15.4 或更高版本
-- Apple Silicon 或 Intel Mac
+Basic Operations
+	•	Hide Desktop Icons: Click the eye icon in the menu bar
+	•	Show Desktop Icons: Click the icon again (now displayed as an eye with a slash)
+	•	Quit the App: Right-click the menu bar icon and select “Quit”
 
-### 使用方法
+Menu Options
 
-#### 基本操作
+Right-clicking the menu bar icon shows:
+	•	“Hide Desktop Icons” / “Show Desktop Icons”: Toggle icon visibility
+	•	“Quit”: Safely exit the application
 
-- **隐藏桌面图标**：点击状态栏的眼睛图标
-- **显示桌面图标**：再次点击状态栏图标（此时显示为斜杠眼睛）
-- **退出应用**：右键状态栏图标，选择「退出」
+🔧 Technical Details
 
-#### 菜单选项
+Core Mechanism
 
-右键点击状态栏图标可以看到：
+The app works by modifying macOS Finder preferences to control the visibility of desktop icons:
 
-- 「隐藏桌面图标」/「显示桌面图标」：切换桌面图标显示状态
-- 「退出」：安全退出应用
-
-## 🔧 技术实现
-
-### 核心原理
-
-本应用通过修改 macOS Finder 的系统偏好设置来实现桌面图标的隐藏/显示：
-
-```bash
-# 隐藏桌面图标
+# Hide desktop icons
 defaults write com.apple.finder CreateDesktop false
 
-# 显示桌面图标
+# Show desktop icons
 defaults write com.apple.finder CreateDesktop true
 
-# 重启 Finder 以应用更改
+# Restart Finder to apply changes
 killall Finder
-```
 
-### 技术栈
+Tech Stack
+	•	Language: Swift 5.0
+	•	Framework: Cocoa
+	•	Minimum Deployment Target: macOS 15.4
+	•	Architecture: Universal (Apple Silicon + Intel)
 
-- **语言**：Swift 5.0
-- **框架**：Cocoa
-- **最低部署目标**：macOS 15.4
-- **架构**：Universal (Apple Silicon + Intel)

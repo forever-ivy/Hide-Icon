@@ -1,4 +1,4 @@
-Hide-Icon
+# Hide-Icon
 
 A minimalist macOS desktop icon hiding tool that instantly gives your desktop a clean and organized look.
 
